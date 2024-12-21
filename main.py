@@ -47,14 +47,14 @@ def assemble_sequence(path):
         fragment_sequence.append(frag)
         sequence += frag[2:]  # Додаємо до послідовності лише останні цифри кожного фрагмента
 
-    return "".join(fragment_sequence), sequence  # Формуємо результат без "&"
+    return "".join(fragment_sequence), sequence  
 
 def process_file(file_path):
     fragments = read_fragments(file_path)
     graph = build_graph(fragments)
     longest_path = find_longest_path(graph, fragments)
     fragment_sequence, result_sequence = assemble_sequence(longest_path)
-    sequence_length = len(fragment_sequence)  # Довжина послідовності (загальна кількість символів)
+    sequence_length = len(fragment_sequence)  # Довжина послідовності 
     return fragment_sequence, result_sequence, sequence_length
 
 def open_file():
